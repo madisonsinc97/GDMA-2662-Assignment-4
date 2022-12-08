@@ -57,6 +57,21 @@ a {
     text-decoration: none;
 }
 
+h2 {
+    font-weight: 600;
+    font-size: 2.5rem;
+    line-height: 3em;
+    text-align: center;
+    color: #FFABE7;
+}
+
+header > div:last-child a {
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: .5em;
+}
+
 /*--------------------------------------------------------------
    5.0 - OBJECTS
 -------------------------------------------------------------- */
@@ -287,11 +302,39 @@ body > header {
     width: 100vw;
 }
 
+header li {
+    display: inline;
+}
+
+header span {
+    display: none;
+}
+
 
 /* ----- NAV ----- */
 
 li {
     list-style-type: none;
+}
+
+i:hover {
+    color: #FFABE7;
+}
+
+/* ----- PLAY DAYS, GYMS + PARTIES ----- */
+
+
+
+/* ----- 80 YEARS OF COACHING ----- */
+
+main > div:nth-child(2) {
+    background: url("../img/empty-gymnasium.jpg") no-repeat center;
+    -moz-backround-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    background-size: cover;
+    width: 100vw;
 }
 
 
