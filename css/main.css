@@ -40,9 +40,9 @@ which goes before in the triangle, eg. hide helper class
     box-sizing: border-box;
 }
 
-/* html {
-    
-} */
+html {
+    font-family: 'Open Sans', sans-serif;
+}
 
 /*--------------------------------------------------------------
    4.0 - ELEMENTS
@@ -51,6 +51,11 @@ which goes before in the triangle, eg. hide helper class
 
 /* ----- TYPOGRAPHY ----- */
 
+a {
+    font-family: 'Inter', sans-serif;
+    color: #fff;
+    text-decoration: none;
+}
 
 /*--------------------------------------------------------------
    5.0 - OBJECTS
@@ -255,13 +260,58 @@ which goes before in the triangle, eg. hide helper class
    6.0 - COMPONENTS
 -------------------------------------------------------------- */
 
-
+body,
+body > header > div:first-child {
+    background-color: #2E2E2E;
+}
 
 /* ----- HERO ----- */
 
 body > header {
-    background-color: #2E2E2E;
+    background: url("../img/gymnastics-bar-split.jpg") no-repeat center;
+    -moz-backround-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    background-size: cover;
+    width: 100vw;
 }
+
+#bar-flip {
+    background: url("../img/gymnastics-bar-flip.jpg") no-repeat center;
+    -moz-backround-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    background-size: cover;
+    width: 100vw;
+}
+
+
+/* ----- NAV ----- */
+
+li {
+    list-style-type: none;
+}
+
+
+/* ----- REVIEWS ----- */
+
+main > div:last-child {
+    background: url("../img/dramatic-back-kick.jpg") no-repeat center;
+    -moz-backround-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    background-size: cover;
+    width: 100vw;
+}
+
+
+
+
+
+/* ----- FOOTER ----- */
 
 
 
