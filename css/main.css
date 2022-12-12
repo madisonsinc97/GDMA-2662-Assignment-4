@@ -42,6 +42,11 @@ which goes before in the triangle, eg. hide helper class
 
 html {
     font-family: 'Open Sans', sans-serif;
+    color: #fff;
+    line-height: 2em;
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-size: 1rem;
 }
 
 /*--------------------------------------------------------------
@@ -59,10 +64,11 @@ a {
 
 h2 {
     font-weight: 600;
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     line-height: 3em;
     text-align: center;
     color: #FFABE7;
+    margin-bottom: 0;
 }
 
 header > div:last-child a {
@@ -280,6 +286,28 @@ body > header > div:first-child {
     background-color: #2E2E2E;
 }
 
+header > div:last-child a,
+main > div:first-child a,
+main > div:nth-child(2) a {
+    background-color: #439DE7;
+    border-radius: 2em;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+}
+
+header > div:last-child a:hover,
+main > div:first-child a:hover,
+main > div:nth-child(2) a:hover {
+    background-color: #fff;
+    color: #439DE7;
+}
+
+main > div:first-child a,
+main > div:nth-child(2) a {
+    font-size: 1rem;
+    padding: .5em 1.3em;
+}
+
 /* ----- HERO ----- */
 
 body > header {
@@ -299,7 +327,6 @@ body > header {
     -o-background-size: cover;
     -ms-background-size: cover;
     background-size: cover;
-    width: 100vw;
 }
 
 header li {
@@ -310,6 +337,15 @@ header span {
     display: none;
 }
 
+header > div:last-child a {
+    margin-left: calc(100% * 8.5 / 12);
+    font-size: 1.5rem;
+    padding: .3em 1.5em;
+}
+
+header > div:last-child > div {
+    padding: 30em 0 4em 0;
+}
 
 /* ----- NAV ----- */
 
@@ -323,20 +359,122 @@ i:hover {
 
 /* ----- PLAY DAYS, GYMS + PARTIES ----- */
 
-
-
-/* ----- 80 YEARS OF COACHING ----- */
-
-main > div:nth-child(2) {
-    background: url("../img/empty-gymnasium.jpg") no-repeat center;
+main > div:first-child > section:first-child div {
+    background: url("../img/foam-pit.jpg") no-repeat center;
     -moz-backround-size: cover;
     -webkit-background-size: cover;
     -o-background-size: cover;
     -ms-background-size: cover;
     background-size: cover;
-    width: 100vw;
+    padding: 6em 2em;
+    border-radius: 7em;
+    margin-left: calc(100% * 3 / 12);
+    margin-bottom: 1.5em;
 }
 
+main > div:first-child > section:nth-child(2) div {
+    background: url("../img/play-gym.jpg") no-repeat center;
+    -moz-backround-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    background-size: cover;
+    padding: 6em 2em;
+    border-radius: 7em;
+    margin-left: calc(100% * 3 / 12);
+    margin-bottom: 1.5em;
+}
+
+main > div:first-child > section:last-child div {
+    background: url("../img/birthday-balloons.jpg") no-repeat center;
+    -moz-backround-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    background-size: cover;
+    padding: 6em 2em;
+    border-radius: 7em;
+    margin-left: calc(100% * 3 / 12);
+    margin-bottom: 1.5em;
+}
+
+main > div:first-child section {
+    text-align: center;
+    margin-left: calc(100% * 1 / 12);
+}
+
+.pd-margin-b {
+    margin-bottom: 0;
+}
+
+.pd-margin-t {
+    margin-top: 0;
+}
+
+.button {
+    margin-top: 1.5em;
+}
+
+main > div:first-child {
+    margin-bottom: 5em;
+}
+
+
+/* ----- 80 YEARS OF COACHING ----- */
+
+.bg-overlay {
+    background-repeat: no-repeat;
+    background-position: center;
+    -moz-backround-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    background-size: cover;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.bg-overlay:before {
+    content: '';
+    background: rgba(133, 133, 133, 0.4);
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#bg-stadium {
+    background-image: url("../img/empty-gymnasium.jpg");
+}
+
+main > div:nth-child(2) h2 {
+    color: #fff;
+    font-size: 1.5rem;
+    text-align: left;
+    line-height: 1.5em;
+}
+
+main > div:nth-child(2) section {
+    margin-left: calc(100% * 1 / 12);
+    padding: 3.5em 0;
+}
+
+main > div:nth-child(2) a {
+    margin-left: calc(100% * 4 / 12);
+}
+
+/* ----- COACHES ----- */
+
+#coaches > div > section:first-child {
+    display: none;
+}
+
+#coaches > div > section:last-child {
+    display: none;
+}
 
 /* ----- REVIEWS ----- */
 
