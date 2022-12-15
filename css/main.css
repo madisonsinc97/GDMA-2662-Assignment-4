@@ -46,7 +46,13 @@ html {
     line-height: 2em;
     font-family: 'Open Sans';
     font-weight: 400;
-    font-size: 1rem;
+    font-size: .9rem;
+}
+
+@media screen and (min-width: 768px) {
+    html {
+        font-size: 1rem;
+    }
 }
 
 /*--------------------------------------------------------------
@@ -62,9 +68,14 @@ a {
     text-decoration: none;
 }
 
+h1 {
+    margin: 0;
+    text-align: center;
+}
+
 h2 {
     font-weight: 600;
-    font-size: 2.1rem;
+    font-size: 1.6rem;
     line-height: 3em;
     color: #FFABE7;
     margin-bottom: 0;
@@ -78,7 +89,7 @@ header > div:last-child a {
 }
 
 h3 {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 0;
 }
@@ -112,7 +123,7 @@ h4 {
 }
 
 [class*='col-'] {
-    padding: .5em .5em;
+    padding: .5em 1.5em;
 }
 
 [class*='col-'] [class*='col-'] {
@@ -298,12 +309,12 @@ body > header > div:first-child {
     background-color: #2E2E2E;
 }
 
-header > div:last-child a,
-section a {
+header > div:last-child a {
     background-color: #439DE7;
     border-radius: 2em;
     font-family: 'Inter', sans-serif;
     font-weight: 500;
+    
 }
 
 header > div:last-child a:hover,
@@ -321,7 +332,7 @@ section a {
 /* ----- HERO ----- */
 
 body > header {
-    background: url("../img/gymnastics-bar-split.jpg") no-repeat center;
+    background: url("../img/gymnastics-bar-split-mobile.jpg") no-repeat center;
     -moz-backround-size: cover;
     -webkit-background-size: cover;
     -o-background-size: cover;
@@ -348,25 +359,21 @@ header span {
 }
 
 header > div:last-child a {
-    margin-left: calc(100% * 8.5 / 12);
     font-size: 1.5rem;
     padding: .3em 1.5em;
 }
 
 header > div:last-child > div {
-    padding: 50em 0 4em 0;
+    padding: 27em 0 4em 0;
+    margin-top: 4em;
 }
 
 #registration {
-    font-size: 4rem;
+    font-size: 3rem;
     text-align: center;
     font-weight: 500;
     line-height: 1.3em;
-    padding: 5em 0 1.3em 0;
-}
-
-img {
-    margin-left: calc(100% * 6 / 12);
+    padding: 7em 0 3em 0;
 }
 
 #logo {
@@ -376,7 +383,11 @@ img {
     -o-background-size: contain;
     -ms-background-size: contain;
     background-size: contain;
-    height: 6em
+    height: 5em;
+    position: absolute;
+    top: -2em;
+    left: .5em;
+    z-index: 2;
 }
 
 header .bg-overlay {
@@ -392,9 +403,16 @@ header .bg-overlay {
         display: contents;
     }
 
-    img {
-        margin-left: calc(100% * 0 / 12);
-        width: 3.5em;
+    header li {
+        padding: .5em;
+        justify-content: flex-end;
+    }
+
+    img,
+    #img {
+        width: 3em;
+        justify-content: flex-start;
+        margin-right: calc(100% * 11 / 12);
     }
 
     header .bg-overlay {
@@ -405,19 +423,12 @@ header .bg-overlay {
     }
 
     #logo {
-        height: 10em;
+        height: 8em;
+        left: -9.5em;
     }
 
     header > div:last-child > div {
-        padding: 28em 0 4em 0;
-    }
-
-    
-    .button a {
-        background-color: #439DE7;
-        border-radius: 2em;
-        font-family: 'Inter', sans-serif;
-        font-weight: 500;
+        padding: 28em 0 0 0;
     }
 
     .button a:hover {
@@ -437,7 +448,41 @@ header .bg-overlay {
     header li a:hover {
         color: #439DE7;
     }
+    .fa-gear:before,
+    .fa-paper-plane:before,
+    .fa-user:before,
+    .fa-bars:before {
+        display: none;
+    }
+    #logo + p span {
+        display: block;
+        text-align: center;
+        font-size: 1.3em;
+        padding: 5em 0 0 0;
+    }
+
+    body > header {
+        background: url("../img/gymnastics-bar-split-desktop.jpg") no-repeat center;
+        -moz-backround-size: cover;
+        -webkit-background-size: cover;
+        -o-background-size: cover;
+        -ms-background-size: cover;
+        background-size: cover;
+        width: 100vw;
+    }
+
+    #registration {
+        font-size: 5rem;
+        padding: 5em 0 2.5em 0;
+    }
+
+    #classes-btn {
+        margin-left: calc(100% * 4 / 12);
+        padding: 2em 0 5em 0;
+    }
+    
 }
+
 
 /* ----- NAV ----- */
 
@@ -449,19 +494,21 @@ i:hover {
     color: #FFABE7;
 }
 
-header nav {
-    background-color: #2E2E2E;
-    padding: 0;
-    position: fixed;
-    top: 42em;
-    left: 0;
+@media screen and (max-width: 768px) {
+    header nav {
+        background-color: #2E2E2E;
+        padding: 0;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+    }
 }
 
 @media screen and (min-width: 768px) {
     header nav {
-        background-color: transparent;
+        background-color: none;
         position: absolute;
-        top: 1em;
+        top: 0;
         left: 0;
         margin-left: calc(100% * 5 / 12);
     }
@@ -474,8 +521,43 @@ header nav {
         display: none;
     }
 }
+@media screen and (min-width: 1024px) {
+    header nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    .header-nav {
+        background-color: #439DE7;
+        border-radius: 2em;
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+    }
+
+    .header-nav:hover {
+        background-color: #fff;
+        color: #439DE7;
+    }
+
+}
 
 /* ----- PLAY DAYS, GYMS + PARTIES ----- */
+
+#play-days div,
+#gyms div,
+#parties div {
+    padding: 5em;
+    border-radius: 7em;
+    margin: 0 auto;
+    margin-bottom: 1.5em;
+}
+
+#plays-days h2,
+#gyms h2,
+#parties h2 {
+    text-align: center;
+}
 
 #play-days div {
     background: url("../img/foam-pit.jpg") no-repeat center;
@@ -484,14 +566,7 @@ header nav {
     -o-background-size: cover;
     -ms-background-size: cover;
     background-size: cover;
-    padding: 6em 2em;
-    border-radius: 7em;
-    margin-left: calc(100% * 3 / 12);
-    margin-bottom: 1.5em;
-}
-
-#plays-days h2 {
-    text-align: center;
+   
 }
 
 #gyms div {
@@ -501,15 +576,8 @@ header nav {
     -o-background-size: cover;
     -ms-background-size: cover;
     background-size: cover;
-    padding: 6em 2em;
-    border-radius: 7em;
-    margin-left: calc(100% * 3 / 12);
-    margin-bottom: 1.5em;
 }
 
-#gyms h2 {
-    text-align: center;
-}
 
 #parties div {
     background: url("../img/birthday-balloons.jpg") no-repeat center;
@@ -518,21 +586,12 @@ header nav {
     -o-background-size: cover;
     -ms-background-size: cover;
     background-size: cover;
-    padding: 6em 2em;
-    border-radius: 7em;
-    margin-left: calc(100% * 3 / 12);
-    margin-bottom: 1.5em;
-}
-
-#parties h2 {
-    text-align: center;
 }
 
 #play-days,
 #gyms,
 #parties {
     text-align: center;
-    margin-left: calc(100% * 1 / 12);
 }
 
 .pd-margin-b {
@@ -542,10 +601,6 @@ header nav {
 .pd-margin-t {
     margin-top: 0;
 }
-
-/* .button {
-    margin-top: 1.5em;
-} */
 
 main > div:first-child {
     margin-bottom: 5em;
@@ -560,105 +615,71 @@ main > div:first-child {
     }
 
     #play-days div {
-        padding: 5em 5em;
+        padding: 5em;
         border-radius: 5em;
-        margin-left: calc(100% * 2.5 / 12);
     }
 
     #gyms div {
         padding: 5em 5em;
         border-radius: 5em;
-        margin-left: calc(100% * 2.5 / 12);
     }
 
     #parties div {
         padding: 5em 5em;
         border-radius: 5em;
-        margin-left: calc(100% * 2.5 / 12);
+    }
+
+    #gyms {
+        padding: 0 2em;
     }
 }
 
 
 /* ----- 80 YEARS OF COACHING ----- */
 
-.bg-overlay {
-    background-repeat: no-repeat;
-    background-position: center;
-    -moz-backround-size: cover;
-    -webkit-background-size: cover;
-    -o-background-size: cover;
-    -ms-background-size: cover;
-    background-size: cover;
-    position: relative;
-    top: 0;
-    left: 0;
-}
-
-.bg-overlay:before {
-    content: '';
-    background: rgba(133, 133, 133, 0.4);
-    width: 100%;
-    height: 100%;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
 #bg-stadium {
-    background-image: url("../img/empty-gymnasium.jpg");
+    background-image: url("../img/empty-gymnasium-mobile.jpg");
 }
 
-main > div:nth-child(2) h2 {
+#bg-stadium h2 {
     color: #fff;
     font-size: 1.5rem;
     text-align: left;
     line-height: 1.5em;
 }
 
-main > div:nth-child(2) section {
+#bg-stadium section {
     margin-left: calc(100% * 1 / 12);
     padding: 3.5em 0;
 }
 
-main > div:nth-child(2) a {
-    margin-left: calc(100% * 4.3 / 12);
+@media screen and (min-width: 768px) {
+    #bg-stadium {
+        background-image: url("../img/empty-gymnasium-desktop.jpg");
+        -moz-backround-size: cover;
+        -webkit-background-size: cover;
+        -o-background-size: cover;
+        -ms-background-size: cover;
+        background-size: cover;
+    }
+
+    #bg-stadium section {
+        margin-left: calc(100% * 6 / 12);
+        padding: 5em 0;
+    }
+
+    #bg-stadium .justify-content {
+        margin-top: 2.5em;
+    }
+
 }
 
 
 /* ----- COACHES ----- */
 
-#coaches > div > section:first-child {
-    display: none;
-}
-
-#coaches > div > section:last-child {
-    display: none;
-}
-
-#coaches > div section {
-    text-align: center;
-}
-
-#coaches a {
-    margin-left: calc(100% * 4.3 / 12);
-}
-
+#coaches > div section,
 #coaches h2 {
     text-align: center;
-}
-
-#giang {
-    background: url("../img/miss-giang.jpg") no-repeat center;
-    -moz-backround-size: cover;
-    -webkit-background-size: cover;
-    -o-background-size: cover;
-    -ms-background-size: cover;
-    background-size: cover;
-    padding: 7em 2em;
-    border-radius: 7em;
-    margin-left: calc(100% * 3 / 12);
-    margin-bottom: 1.5em;
 }
 
 #mark {
@@ -668,9 +689,9 @@ main > div:nth-child(2) a {
     -o-background-size: cover;
     -ms-background-size: cover;
     background-size: cover;
-    padding: 7em 2em;
-    border-radius: 7em;
-    margin-left: calc(100% * 3 / 12);
+    padding: 10em;
+    border-radius: 10em;
+    margin: 0 auto;
     margin-bottom: 1.5em;
 }
 
@@ -681,9 +702,9 @@ main > div:nth-child(2) a {
     -o-background-size: cover;
     -ms-background-size: cover;
     background-size: cover;
-    padding: 7em 2em;
-    border-radius: 7em;
-    margin-left: calc(100% * 3 / 12);
+    padding: 10em;
+    border-radius: 10em;
+    margin: 0 auto;
     margin-bottom: 1.5em;
 }
 
@@ -694,6 +715,7 @@ main > div:nth-child(2) a {
     font-weight: 300;
     font-size: .8rem;
     color: #D9D9D9;
+    text-align: center;
 }
 
 #coaches a {
@@ -705,9 +727,23 @@ main > div:nth-child(2) a {
 }
 
 @media screen and (min-width: 768px) {
-    #coaches section:first-child,
-    #coaches section:last-child {
-        display: content;
+
+    #sheila,
+    #mark,
+    #giang,
+    #caroline {
+        padding: 7em 2em;
+        border-radius: 7em;
+        margin: 0 auto;
+    }
+
+    #giang {
+        background: url("../img/miss-giang.jpg") no-repeat center;
+        -moz-backround-size: cover;
+        -webkit-background-size: cover;
+        -o-background-size: cover;
+        -ms-background-size: cover;
+        background-size: cover;
     }
 
     #caroline {
@@ -717,21 +753,16 @@ main > div:nth-child(2) a {
         -o-background-size: cover;
         -ms-background-size: cover;
         background-size: cover;
-        padding: 7em 2em;
-        border-radius: 7em;
-        margin-bottom: 1.5em;
     }
+
+    
 }
 
 /* ----- REVIEWS ----- */
 
 #bg-back-kick {
-    background-image: url("../img/dramatic-back-kick.jpg");
+    background-image: url("../img/dramatic-back-kick-mobile.jpg");
     padding: 3.5em 0;
-}
-
-#bg-back-kick a {
-    margin-left: calc(100% * 4.3 / 12);
 }
 
 #bg-back-kick .fa-solid {
@@ -739,13 +770,27 @@ main > div:nth-child(2) a {
     font-size: .8rem;
 }
 
-#bg-back-kick p {
-    margin-left: calc(100% * 1 / 12);
+#bg-back-kick ul {
+    padding: 0 0 0 .5em;
 }
 
-#bg-back-kick ul {
-    margin-left: calc(100% * .8 / 12);
-    padding-bottom: 0;
+@media screen and (min-width: 768px) {
+    #bg-back-kick {
+        background-image: url("../img/dramatic-back-kick-desktop.jpg");
+        -moz-backround-size: cover;
+        -webkit-background-size: cover;
+        -o-background-size: cover;
+        -ms-background-size: cover;
+        background-size: cover;
+    }
+
+    #bg-back-kick .justify-content {
+        margin-top: 2.5em;
+    }
+
+    #bg-back-kick section {
+        padding: 5em 0;
+    }
 }
 
 /* ----- PARENT TOT ----- */
@@ -757,19 +802,14 @@ main > div:nth-child(2) a {
     -o-background-size: cover;
     -ms-background-size: cover;
     background-size: cover;
-    padding: 10em 2em;
+    padding: 12em 2em;
     border-radius: 13em;
     margin: 5em 0 1.5em 0;
-    margin-left: calc(100% * 2 / 12);
 }
 
 #classes > div,
 footer {
     background-color: #000000;
-}
-
-#classes a {
-    margin-left: calc(100% * 4 / 12);
 }
 
 #classes > div,
@@ -795,7 +835,7 @@ footer {
 }
 
 #classes p {
-    margin-top: 0;
+    margin: 0 0 .3em 0;
 }
 
 #classes .col-sm-10 {
@@ -803,7 +843,20 @@ footer {
 }
 
 #classes a {
-    padding: .5em 2.5em;
+    padding: .5em 2.3em;
+}
+
+#classes .justify-content {
+    margin-top: 2em;
+}
+
+
+@media screen and (min-width: 768px) {
+    #parent-tot {
+        border-radius: 13em;
+        height: 50%;
+        width: 50%;
+    }
 }
 
 /* ----- JUNIOR CLASSES ----- */
@@ -815,17 +868,19 @@ footer {
     -o-background-size: cover;
     -ms-background-size: cover;
     background-size: cover;
-    padding: 10em 2em;
+    padding: 12em 2em;
     border-radius: 13em;
     margin: 4em 0 1.5em 0;
-    margin-left: calc(100% * 2 / 12);
 }
 
 @media screen and (min-width: 768px) {
     #junior-classes {
-        padding: 3em 2em;
+        /* padding: 3em 2em;
         border-radius: 12em;
-        margin: 8em 0;
+        margin: 8em 0; */
+        border-radius: 13em;
+        height: 50%;
+        width: 50%;
     }
 
     .reverse {
@@ -842,17 +897,19 @@ footer {
     -o-background-size: cover;
     -ms-background-size: cover;
     background-size: cover;
-    padding: 10em 2em;
+    padding: 12em 2em;
     border-radius: 13em;
     margin: 8em 0 1.5em 0;
-    margin-left: calc(100% * 2 / 12);
 }
 
 @media screen and (min-width: 768px) {
     #school-age-classes {
-        padding: 3em 2em;
-        border-radius: 12em;
-        margin: 24em 0;
+        /* padding: 12em 2em;
+        border-radius: 13em;
+        margin: 5em 0 1.5em 0; */
+        border-radius: 13em;
+        height: 50%;
+        width: 50%;
     }
 }
 
@@ -865,17 +922,19 @@ footer {
     -o-background-size: cover;
     -ms-background-size: cover;
     background-size: cover;
-    padding: 10em 2em;
+    padding: 12em 2em;
     border-radius: 13em;
     margin: 8em 0 1.5em 0;
-    margin-left: calc(100% * 2 / 12);
 }
 
 @media screen and (min-width: 768px) {
     #adult-gymnastics {
-        padding: 3em 2em;
-        border-radius: 12em;
-        margin: 9em 0;
+        /* padding: 12em 2em;
+        border-radius: 13em;
+        margin: 5em 0 1.5em 0; */
+        border-radius: 13em;
+        height: 50%;
+        width: 50%;
     }
 }
 
@@ -925,11 +984,7 @@ footer nav {
 
     footer ul {
         margin-top: 6em;
-        margin-right: calc(100% * 4 / 12);
-    }
-
-    footer section {
-        margin-left: calc(100% * 1 / 12)
+        margin-right: calc(100% * 5 / 12);
     }
 
     footer ul li {
@@ -946,3 +1001,36 @@ footer nav {
 /*--------------------------------------------------------------
    7.0 - UTILITY
 -------------------------------------------------------------- */
+
+.pos-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 4;
+}
+.btn {
+    background-color: #439DE7;
+    border-radius: 2em;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+}
+
+.justify-content {
+    text-align: center;
+}
+
+.hide-sm {
+    display: none;
+}
+
+
+@media screen and (min-width: 768px) {
+    .hide-sm {
+        display: block;
+    }
+
+    .class-padding {
+        padding: 3em 0em;
+    }
+}
